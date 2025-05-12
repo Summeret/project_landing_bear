@@ -1,0 +1,25 @@
+/* index.css */
+/* 1행 ========================== 북극곰 후원 안내 */
+#wrap {}
+#wrap .intro {
+    height:100vh;
+    background:url(../images/bg1.png) no-repeat center / cover;
+}
+#wrap .intro .container {}
+/* 2개의 h1의 디자인이 너무 다르니까 처음부터 수열로 나누어서 작성 */
+#wrap .intro .container h1:nth-child(1) {} 
+#wrap .intro .container h1:nth-child(1) a {}
+#wrap .intro .container h1:nth-child(1) a img {width:89px;}
+#wrap .intro .container h1:nth-child(2) {}
+#wrap .intro .container h1:nth-child(2) em {}
+#wrap .intro .container .sponsor_btn {}
+#wrap .intro .container .sponsor_question {}
+/* 2행 ========================== 퀴즈 */
+/* 3행 ========================== 새끼북극곰 이야기 */
+/* 4행 ========================== 빙하면적감소 */
+/* 5행 ========================== 인류재앙 */
+/* 6행 ========================== 지구위기 */
+/* 7행 ========================== WWF단체홍보 */
+/* 8행 ========================== 다양한 활동 */
+/* 9행 ========================== 감사선물 */
+/* 10행 ========================== 결제 안내사항 */
