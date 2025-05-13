@@ -4,16 +4,60 @@
 #wrap .intro {
     height:100vh;
     background:url(../images/bg1.png) no-repeat center / cover;
+    position:relative;
 }
-#wrap .intro .container {}
+#wrap .intro::before {
+    content:''; display:block; /* 가상요소의 필수속성 */
+    width:100%; height:100%;
+    position:absolute; left:0; top:0; z-index:20;
+    background:linear-gradient(transparent, rgba(0,0,0,0.8));
+}
+#wrap .intro .container {
+    position:relative; z-index:30;
+    max-width:1250px; /* 1250까지만 커지고 그 이하는 상대값으로 처리해라 */
+    min-width:320px; /* 최소로 작아져야할 값 작성하기 */
+    /* 부모는 100%로 두고 실제 컨텐츠 기준으로 max,min 적용하기 */
+    margin:0 auto; /* 디바이스 크기보다 width가 작은 블록요소를 가운데 배치하는 방법 */
+    /* 형제-형제 margin, 부모-자식 psdding */
+    padding-top:100px;
+    /* 자식,자손이 인라인일경우 수평정렬 text-align */
+    text-align:center;
+    overflow:hidden;
+}
 /* 2개의 h1의 디자인이 너무 다르니까 처음부터 수열로 나누어서 작성 */
-#wrap .intro .container h1:nth-child(1) {} 
+#wrap .intro .container h1:nth-child(1) {
+    text-align:left;
+    margin-bottom:100px;
+} 
 #wrap .intro .container h1:nth-child(1) a {}
 #wrap .intro .container h1:nth-child(1) a img {width:89px;}
-#wrap .intro .container h1:nth-child(2) {}
-#wrap .intro .container h1:nth-child(2) em {}
-#wrap .intro .container .sponsor_btn {}
-#wrap .intro .container .sponsor_question {}
+#wrap .intro .container h1:nth-child(2) {
+    color:#fff;
+    font-size:4.375rem;
+    line-height:1.3;
+}
+#wrap .intro .container h1:nth-child(2) em {
+    color:#fff;
+    font-size:4.375rem;
+    font-weight:700;
+}
+#wrap .intro .container .sponsor_btn {
+    display:block;
+    width:409px; line-height:71px; /* 수직중앙 배치해야하는 글자가 1줄일 경우 height생략가능. line-height만 px값으로 적용 */
+    color:#fff;
+    background:linear-gradient(90deg, #FE9300, #FF7300);
+    border-radius:50px;
+    margin:100px auto; /* 블록요소 중앙정렬하면서 위아래 형제와 margin 한번에 적용하기 */
+    font-size:2.125rem; font-weight:700;
+}
+#wrap .intro .container .sponsor_question {
+    float:right; /* flex나 position없이 간단하게 좌우로만 위치시킬때는 float로 처리해보기 -> 후에 반드시 세로크기 혹은 부모에 overflow:hodden; 적용하기*/
+    background-color:#050505; color:#fff;
+    width:439px; height:51px;
+    line-height:1.2; padding-top:10px; /* 피그마의 행간 120%를 살리고 싶다면 높이는 그대로 써주고 padding으로 가운데 배치해준다. */
+    border-radius:50px;
+    font-size:1.625rem;
+}
 /* 2행 ========================== 퀴즈 */
 /* 3행 ========================== 새끼북극곰 이야기 */
 /* 4행 ========================== 빙하면적감소 */
