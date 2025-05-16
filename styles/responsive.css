@@ -28,6 +28,19 @@
         width:270px; line-height:62px;
         font-size:1.375rem;
     }
+    /* ==================== 4행 빙하면적감소 */
+    #wrap .reduction {padding:200px 80px;}
+    /* ==================== 5행 인류재앙 */
+    #wrap .disaster {padding:200px 80px;}
+    #wrap .disaster .container h2 {
+        font-size:2.5rem; font-weight:500;
+    }
+    #wrap .disaster .container p {    
+        font-size:1;
+    }
+    #wrap .disaster .container .lisk li > p {
+        height:max-content;
+    }
 }
 /* mobile 849~320 */
 @media screen and (max-width:849px){
@@ -63,4 +76,22 @@
         width:270px; line-height:62px;
         font-size:1.375rem;
     }
+    /* ==================== 4행 빙하면적감소 */
+    #wrap .reduction {padding:70px 15px;}
+    /* ==================== 5행 인류재앙 */
+    #wrap .disaster {padding:70px 15px;}
+    #wrap .disaster .container .lisk {
+        flex-flow:column nowrap;
+    }
+    #wrap .disaster .container .lisk li > p {
+        height:max-content;
+    }
+    #wrap .disaster .container h2 {
+        font-size:1.375rem; font-weight:500;
+    }
+    #wrap .disaster .container p {    
+        font-size:0.813rem;
+    }
+    #wrap .disaster .container .lisk li .bg {height:150px;}
+    #wrap .disaster .container .lisk li .bg p {font-size:1;}
 }

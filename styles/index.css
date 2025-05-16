@@ -16,7 +16,6 @@ body * {transition:all 0.5s}
     background:linear-gradient(transparent, rgba(0,0,0,0.8));
 }
 #wrap .intro .container {
-    border:3px solid aqua;
     position:relative; z-index:30;
     max-width:1250px; /* 1250까지만 커지고 그 이하는 상대값으로 처리해라 */
     min-width:320px; /* 최소로 작아져야할 값 작성하기 */
@@ -71,7 +70,6 @@ body * {transition:all 0.5s}
     max-width:1250px; 
     min-width:320px; /* #wrap .container -> 공통 */
     margin:0 auto;
-    border:2px solid red;
     display:grid; /* 왼쪽 퀴즈, 오른쪽 참여현황 정렬 grid */
     grid-template-columns:1fr 1fr; /* 같은 크기로 정렬 */
 }
@@ -128,7 +126,6 @@ body * {transition:all 0.5s}
     min-width:320px;
     margin:0 auto;
     text-align:center;
-    border:5px solid red;
 }
 #wrap .ad .container h2 {
     font-size:3.438rem; font-weight:500;
@@ -148,7 +145,113 @@ body * {transition:all 0.5s}
     font-size:2.125rem; font-weight:700;
 }
 /* 4행 ========================== 빙하면적감소 */
+#wrap .reduction {
+    background-image:url(../images/50_bg.png);
+    background-size:cover;
+    padding:200px 0;
+}
+#wrap .reduction .container {
+    /* border:3px solid red; */
+    max-width:1250px; min-width:320px;
+    margin:0 auto;
+}
+#wrap .reduction .container h2 {
+    font-size:3.438rem; font-weight:500;
+    line-height:1.4; letter-spacing:-0.01em;
+    color:#fff;
+}
+#wrap .reduction .container h2 em {
+    color:#050505;
+    position:relative;
+}
+#wrap .reduction .container h2 em span {
+    position:relative; z-index:60;
+}
+#wrap .reduction .container h2 em::before {
+    content:''; display:block;
+    position:absolute; left:0; top:0; width:100%; height:100%;
+    background-color:#fff;
+    z-index:50; /* z-index는 부모가 아니라 형제한테 */
+}
+#wrap .reduction .container h2+p {
+    font-size:2.125rem; font-weight:700;
+    line-height:1.2; letter-spacing:0;
+    color:#fff;
+    margin:81px 0;
+}
+#wrap .reduction .container p img {
+    width:100%;
+}
 /* 5행 ========================== 인류재앙 */
+#wrap .disaster {
+    background-color:#f5f5f5;
+    padding:200px 0;
+}
+#wrap .disaster .container {
+    max-width:1250px; min-width:320px; 
+    /* 최소 320~ 최대 1250 사이 너비값은 가변형 세팅 */
+    /* (위) 큰 범위값 세팅 후 @media 규칙 내에서 태블릿, 모바일에 맞는 레이아웃 재수정 하며 반응형 제작*/
+    margin:0 auto;
+    text-align:center;
+}
+#wrap .disaster .container h2 {
+    font-size:3.438rem; font-weight:500;
+}
+#wrap .disaster .container p {    
+    font-size:1.25rem;
+    line-height:1.7;
+}
+#wrap .disaster .container > p {
+    margin:55px 0;
+}
+#wrap .disaster .container .lisk {
+    display:flex; 
+    /* 정렬하는 대상(li)의 부모(flex) */
+    /* flex의 자식요소들을 옆으로 정렬 (기본값) */
+    gap:20px; /* 사이만 인식하고 양쪽끝은 인식하지 않음 */
+}
+#wrap .disaster .container .lisk li {
+    background-color:#fff;
+    flex:1; /* flex 비율 설정 */
+}
+#wrap .disaster .container .lisk li .bg {
+    height:320px;
+    background-position:0 60%;
+    background-size:cover;
+    position:relative;
+    padding:48px;
+
+}
+#wrap .disaster .container .lisk li .bg::before { /* 디자인때문에 만드는 가상선택자 */
+    content:''; display:block;
+    position:absolute; left:0; top:0; width:100%; height:100%;
+    /* (위 2줄) 가상선택자 bofore 또는 after 사용 시 필수속성 모음 */
+    background:linear-gradient(180deg, #000 19%, transparent 60%);
+    z-index:50;
+}
+#wrap .disaster .container .lisk li .bg h3 {
+    font-size:2.688rem; font-weight:800; color:#fff; 
+    position:relative; z-index:60;
+    margin-bottom:11px;
+}
+#wrap .disaster .container .lisk li .bg p {
+    color:#fff; 
+    position:relative; z-index:60; /* z-index를 적용하려면 position 세팅이 먼저 -> 현재위치가 기준이 되기때문에 relative 작성 */
+    /* z-index 속성은 position속성이 선행되어야만 사용할 수 있는 중첩순서이다. */
+}
+#wrap .disaster .container .lisk li > p {
+    height:250px; padding:20px;
+}
+/* ===================== 5행 개별 배경 선택자 */
+#wrap .disaster .container .lisk li:nth-child(1) .bg {
+    background-image:url(../images/28.png);
+}
+#wrap .disaster .container .lisk li:nth-child(2) .bg {
+    background-image:url(../images/27.png);
+}
+#wrap .disaster .container .lisk li:nth-child(3) .bg {
+    background-image:url(../images/wwf.jpg);
+}
 /* 6행 ========================== 지구위기 */
 /* 7행 ========================== WWF단체홍보 */
 /* 8행 ========================== 다양한 활동 */
